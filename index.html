@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UrbanWear | Home</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 sticky-top">
+  <a class="navbar-brand fw-bold" href="index.html">UrbanWear</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="nav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+      <li class="nav-item"><a class="btn btn-outline-light ms-2" href="cart.html">🛒 Cart</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<header class="hero text-center text-white" style="background-image:url('https://images.unsplash.com/photo-1541099649105-f69ad21f3246'); background-size:cover; background-position:center; height:400px;">
+  <div class="hero-overlay" style="background: rgba(0,0,0,0.5); height:100%; display:flex; flex-direction:column; justify-content:center;">
+    <h1>UrbanWear</h1>
+    <p>Premium Clothing Store in Pakistan</p>
+    <a href="products.html" class="btn btn-light">Shop Now</a>
+  </div>
+</header>
+
+<!-- FEATURED PRODUCTS -->
+<section class="container mt-5">
+  <h2 class="text-center mb-4">Featured Products</h2>
+  <div class="row" id="featuredProducts"></div>
+</section>
+
+<footer class="footer">© 2026 UrbanWear founders: (Shay Haq, Abdul Moiz Muhammadi, Kamran Khan, Hasnain Ali Raza Memon, Musab)</footer>
+
+<script src="script.js"></script>
+<script>
+// FEATURED PRODUCTS - Display top 6
+const featuredContainer = document.getElementById("featuredProducts");
+if(featuredContainer){
+  const featured = products.slice(0,6); // First 6 products
+  featured.forEach(p=>{
+    featuredContainer.innerHTML += `
+      <div class="col-md-4 mb-4">
+        <div class="card product-card">
+          <img src="${p.image}" class="product-img">
+          <div class="card-body text-center">
+            <h6>${p.name}</h6>
+            <p class="price">PKR ${p.price}</p>
+            <button class="btn btn-dark btn-sm w-100 mb-2" onclick="addToCart(${p.id})">Add to Cart</button>
+            <button class="btn btn-outline-dark btn-sm w-100" onclick="buyNow(${p.id})">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+}
+</script>
+</body>
+</html>

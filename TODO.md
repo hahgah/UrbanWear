@@ -1,0 +1,4 @@
+- [ ] Fix "Add to Cart" button in script.js to pass product ID instead of name and price
+- [ ] Add buyNow function in script.js to add product to cart and redirect to checkout.html
+- [ ] Update "Buy Now" button in index.html featured products to call buyNow
+- [ ] Update "Buy Now" button in product.html to call buyNow
